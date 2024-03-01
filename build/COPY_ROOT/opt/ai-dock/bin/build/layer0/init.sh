@@ -7,7 +7,7 @@ umask 002
 source /opt/ai-dock/bin/build/layer0/common.sh
 
 # Custom
-source /opt/ai-dock/bin/build/seargedp-seargesdxl.sh
+source /opt/ai-dock/bin/build/layer0/seargedp-seargesdxl.sh
 
 if [[ "$XPU_TARGET" == "NVIDIA_GPU" ]]; then
     source /opt/ai-dock/bin/build/layer0/nvidia.sh
