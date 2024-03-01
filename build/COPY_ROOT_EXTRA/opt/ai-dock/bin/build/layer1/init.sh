@@ -85,9 +85,6 @@ function build_extra_start() {
     
     # Ensure pytorch hasn't been clobbered
     $MAMBA_DEFAULT_RUN python /opt/ai-dock/tests/assert-torch-version.py
-
-    # Custom
-    . seargedp-seargesdxl.sh
 }
 
 function build_extra_get_nodes() {
