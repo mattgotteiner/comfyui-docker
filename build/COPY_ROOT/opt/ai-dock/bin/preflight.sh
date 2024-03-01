@@ -5,10 +5,6 @@
 function preflight_main() {
     preflight_copy_notebook
     preflight_update_comfyui
-
-    # Custom
-    /opt/ai-dock/bin/seargedp-seargesdxl.sh
-
     printf "%s" "${COMFYUI_FLAGS}" > /etc/comfyui_flags.conf
 }
 
