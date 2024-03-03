@@ -25,7 +25,10 @@ ENV MAMBA_DEFAULT_RUN="micromamba run -n $MAMBA_DEFAULT_ENV"
 
 # Copy overrides and models into later layers for fast rebuilds
 COPY --chown=0:1111 ./COPY_ROOT_EXTRA/ /
+COPY --chown=0:1111 ./COPY_ROOT_EXTRA/opt/ai-dock/bin/build/layer1/seargedp-seargesdxl.sh /opt/ai-dock/bin/build/layer1/seargedp-seargesdxl.sh 
 RUN set -eo pipefail && /opt/ai-dock/bin/build/layer1/init.sh | tee -a /var/log/build.log
+RUN set -eo pipefail && /opt/ai-dock/bin/build/layer1/seargedp-seargesdxl.sh | tee -a /var/log/seargedp-seargesdxl.log
+
 
 # Keep init.sh as-is and place additional logic in /opt/ai-dock/bin/preflight.sh
 CMD ["init.sh"]
